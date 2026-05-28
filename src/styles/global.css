@@ -1,0 +1,228 @@
+﻿/* Responsive Media Queries */
+@media (max-width: 640px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+  
+  .stack-on-mobile {
+    flex-direction: column !important;
+  }
+  
+  .full-width-mobile {
+    width: 100% !important;
+  }
+  
+  .text-center-mobile {
+    text-align: center !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .hide-on-tablet {
+    display: none !important;
+  }
+  
+  .two-cols-tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .hide-on-desktop {
+    display: none !important;
+  }
+}
+
+/* Utility Classes */
+.responsive-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .responsive-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .responsive-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1025px) {
+  .responsive-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.responsive-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (min-width: 640px) {
+  .responsive-container {
+    max-width: 640px;
+    padding: 0 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .responsive-container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-container {
+    max-width: 1024px;
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .responsive-container {
+    max-width: 1200px;
+  }
+}
+/* Responsive fixes */
+@media (max-width: 640px) {
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  table {
+    font-size: 12px;
+  }
+  
+  th, td {
+    padding: 8px 4px !important;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+  }
+  
+  .btn-group button {
+    width: 100%;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0a0a0a;
+}
+
+/* ============ FIX KONTEN KETUTUP NAVBAR ============ */
+/* Navbar height fix - semua halaman kecuali dashboard */
+#root > div:first-child {
+  padding-top: 65px;
+}
+
+/* Dashboard container - konten geser ke bawah */
+div[style*="marginLeft: 250px"] {
+  padding-top: 20px !important;
+  margin-top: 0 !important;
+}
+
+/* Dashboard header jadi relative (ga sticky) */
+header[style*="position: sticky"] {
+  position: relative !important;
+  top: auto !important;
+}
+
+/* Home page padding */
+div[style*="paddingTop: 80px"] {
+  padding-top: 80px !important;
+}
+
+/* Pendaftaran page */
+div[style*="paddingTop: 80px"][style*="padding: 100px 20px 40px"] {
+  padding-top: 100px !important;
+}
+
+/* ============ BUTTON STYLES ============ */
+.btn-primary {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  border: none;
+  padding: 10px 24px;
+  border-radius: 40px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #dc2626;
+  padding: 8px 22px;
+  border-radius: 40px;
+  color: #dc2626;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover {
+  background: rgba(220, 38, 38, 0.1);
+  transform: translateY(-2px);
+}
+
+/* ============ SCROLLBAR ============ */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dc2626;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b91c1c;
+}
+
+/* ============ PRINT STYLES ============ */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  button {
+    display: none !important;
+  }
+  
+  * {
+    background: white !important;
+    color: black !important;
+  }
+}

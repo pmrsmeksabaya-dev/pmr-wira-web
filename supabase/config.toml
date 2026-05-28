@@ -1,0 +1,8 @@
+# supabase/config.toml
+project_id = "kavcdotbteecdmgevxta"
+
+[api]
+enabled = true
+
+[functions.create-admin]
+enabled = true
